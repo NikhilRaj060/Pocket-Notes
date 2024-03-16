@@ -2,6 +2,7 @@
 import React, { useRef, useState } from "react";
 import "./Modal.css";
 import { v4 as uuidv4 } from "uuid";
+import { useMobileView } from "../../Context/MobileViewContext";
 
 const Modal = ({
   isOpen,
@@ -15,6 +16,7 @@ const Modal = ({
   const [selectedColorRgb, setSelectedColorRgb] = useState(null);
   const [selectedColor, setSelectedColor] = useState(null);
   const [noteName, setNoteName] = useState("");
+  const isMobileView = useMobileView();
 
   const handleClickOutside = (event) => {
     if (modalRef.current && !modalRef.current.contains(event.target)) {
@@ -62,41 +64,74 @@ const Modal = ({
         backgroundColor: selectedColor,
       });
       onClose();
-      setSelectedColor(null)
+      setSelectedColor(null);
     }
   };
 
   return (
     <div
       onClick={handleClickOutside}
-      style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        width: "100%",
-        height: "100%",
-        background: "rgba(0, 0, 0, 0.5)",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        zIndex :  9999
-      }}
+      style={
+        isMobileView
+          ? {
+              padding: "20px",
+              position: "fixed",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              background: "rgba(0, 0, 0, 0.5)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              zIndex: 9999,
+            }
+          : {
+              position: "fixed",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              background: "rgba(0, 0, 0, 0.5)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              zIndex: 9999,
+            }
+      }
     >
       <div
         ref={modalRef}
-        style={{
-          background: "white",
-          height: 270,
-          width: 600,
-          margin: "auto",
-          padding: "2%",
-          paddingLeft: "35px",
-          border: "2px solid #000",
-          borderRadius: "10px",
-          boxShadow: "2px solid black",
-          position: "relative",
-          overflow: "hidden",
-        }}
+        className="model"
+        style={
+          isMobileView
+            ? {
+                background: "white",
+                height: "270px",
+                width: "600px",
+                margin: "auto",
+                padding: "2% 2% 2% 15px",
+                border: "2px solid rgb(0, 0, 0)",
+                borderRadius: "10px",
+                position: "relative",
+                overflow: "hidden",
+                display: "flex",
+                flexDirection: "column",
+              }
+            : {
+                background: "white",
+                height: 270,
+                width: 600,
+                margin: "auto",
+                padding: "2%",
+                paddingLeft: "15px",
+                border: "2px solid #000",
+                borderRadius: "10px",
+                boxShadow: "2px solid black",
+                position: "relative",
+                overflow: "hidden",
+              }
+        }
       >
         <h3 className="modal-header">Create New group</h3>
         <div className="title">
