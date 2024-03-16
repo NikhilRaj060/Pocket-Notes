@@ -1,6 +1,7 @@
 .note-sidebar {
-    width: 30%;
-    height: 100%;
+    width: 25%;
+    height: 740px;
+    position: relative;
 }
 
 .header-sidebar {
@@ -8,3 +9,123 @@
     padding: 35px 30px;
     font-size: 35px;
 }
+
+.note-name-sidebar {
+    padding-left: 20px;
+    font-weight: 600;
+    font-size: 22px;
+    color: black;
+    line-height: 28px;
+    letter-spacing: 2%;
+}
+
+.main-container {
+    overflow-y: scroll;
+    height: 620px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.container {
+    border-radius: 15px;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    padding: 10px 30px;
+}
+
+.btn {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    height: 70px;
+    width: 70px;
+    background-color: #16008B;
+    border-radius: 50%;
+    align-items: center;
+    bottom: 30px;
+    right: 30px;
+    cursor: pointer;
+}
+
+.plus-icon {
+    color: white;
+    font-size: 50px;
+    font-weight: 500;
+}
+
+.title {
+    display: flex;
+    padding-bottom: 15px;
+}
+
+.modal-title{
+    margin: 0;
+    padding-right: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 40px;
+    letter-spacing: 3.5%;
+}
+
+#title-input {
+    padding: 0px 15px;
+    font-size: 20px;
+    width: 60%;
+    border-radius: 20px;
+    border: 2px solid #CCCCCC;
+}
+
+#title-input::placeholder {
+    color: #CCCCCC;
+}
+
+.create-btn {
+    padding: 5px 41px;
+    background: #001F8B;
+    color: white;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 20px;
+    right: 40px;
+}
+
+.modal-header {
+    font-size: 22px;
+}
+
+.selected-color {
+    transform: scale(1.2); 
+  }
+  
+  .color-box {
+    padding: 0px 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.color-inner {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
+  
+  .color-box.selected-color::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 20px 5px rgba(var(--selected-color-r), var(--selected-color-g), var(--selected-color-b), 0.7);
+  }
+
+  @media (max-width: 768px) {
+    .note-sidebar {
+      width: 100%;
+    }
+  }

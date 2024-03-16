@@ -1,13 +1,13 @@
-import './App.css'
-import Main from './Main/Main'
+import "./App.css";
+import Main from "./Main/Main";
+import { MobileViewProvider } from './Context/MobileViewContext';
 
 function App() {
-
   return (
-    <>
-    <Main></Main>
-    </>
-  )
+    <MobileViewProvider>
+      <Main></Main>
+    </MobileViewProvider>
+  );
 }
 
-export default App
+export default App;

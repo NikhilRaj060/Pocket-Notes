@@ -1,15 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import "./NoteContainer.css";
 import bgImg from "../../assets/image-bg.png";
 import NoteContent from "./NoteContent/NoteContent";
 import { MdLock } from "react-icons/md";
+import { useMobileView } from '../../Context/MobileViewContext';
 
-function NoteContainer({ note }) {
-  console.log(note);
+function NoteContainer({ notes , isNotesSelected , setNotesContainer , isClicked}) {
+
+  const isMobileView = useMobileView();
+
   return (
     <div className="div-container">
-      {true ? (
-        <NoteContent></NoteContent>
+      {isMobileView ? 
+        <NoteContent notes={notes} isClicked={isClicked} setNotesContainer={setNotesContainer}></NoteContent>
+      : isNotesSelected ? (
+        <NoteContent notes={notes} isClicked={isClicked} setNotesContainer={setNotesContainer}></NoteContent>
       ) : (
         <div style={{display: "flex" ,height : "100%" , margin : "auto" , position : "relative"}}>
           <div className="emptynotes-conatiner">

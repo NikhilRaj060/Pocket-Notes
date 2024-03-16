@@ -1,4 +1,177 @@
 .nav {
-    height: 80px;
+    height: 75px;
     background-color: #001F8B;
+}
+
+.nav-container {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    padding: 10px 30px;
+}
+
+.note-name-img {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.initial-name-text {
+    font-size: 25px;
+    color: white;
+    font-weight: 500;
+}
+
+.note-name {
+    padding-left: 20px;
+    font-weight: 600;
+    font-size: 24px;
+    color: white;
+    line-height: 28px;
+    letter-spacing: 2%;
+}
+
+
+.textarea {
+    position: absolute;
+    bottom: 0;
+    width: 75%;
+    padding: 20px;
+    height: 180px;
+    background-color: #001F8B;
+}
+
+textarea {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    resize: none;
+    font-size: 30px;
+    padding: 15px;
+    color: #9A9A9A;
+    border-radius: 10px;
+}
+
+textarea::placeholder {
+    color: #9A9A9A;
+    font-size: 30px;
+    line-height: 35px;
+    letter-spacing: 2%;
+}
+
+.send-icon {
+    position: absolute;
+    cursor: pointer;
+    bottom: 30px;
+    right: 30px;
+}
+
+button {
+    all: initial;
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+    line-height: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.main-body {
+    display: flex;
+    align-items: center;
+    overflow-y: scroll;
+    gap: 10px;
+    padding: 15px;
+    flex-direction: column;
+    height: 500px;
+}
+
+.note-content {
+    background-color: white;
+    padding: 20px 20px 10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 5px;
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    min-width: 100%;
+    min-height: 190px;
+}
+
+.dateandtime {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 10px;
+}
+
+.note-text {
+    display: flex;
+    flex-wrap: wrap;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+}
+
+.text-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.dateandtimewithicon {
+    display: flex;
+    align-items: center;
+}
+
+.doticon {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.empty-notes {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    color: white;
+    word-wrap: break-word;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.back-icon {
+    padding-right: 10px;
+}
+
+
+@media (max-width: 768px) {
+    .textarea {
+        width: 100%;
+        font-size: 20px;
+        padding: 15px;
+    }
+
+    textarea::placeholder {
+        color: #9A9A9A;
+        font-size: 16px;
+        line-height: 22 px;
+        letter-spacing: 1%;
+    }
+
+    .send-icon {
+        position: absolute;
+        cursor: pointer;
+        bottom: 20px;
+        right: 30px;
+    }
 }
