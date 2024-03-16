@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./NoteSideBar.css";
 import Modal from "../Modal/Modal";
 
-const NoteSideBar = ({ sendNotes , isClicked }) => {
+const NoteSideBar = ({ sendNotes, isClicked }) => {
   const [notes, setNotes] = useState(() => {
     const storedNotes = localStorage.getItem("notes");
     return storedNotes ? JSON.parse(storedNotes) : [];
@@ -43,7 +43,7 @@ const NoteSideBar = ({ sendNotes , isClicked }) => {
       let noteId = note.noteId;
       let filteredNotes = notes.filter((f) => f.noteId === noteId);
       sendNotes(filteredNotes);
-      isClicked(true)
+      isClicked(true);
       setNotes(
         notes.map((n) =>
           n.noteId === note.noteId
@@ -71,20 +71,22 @@ const NoteSideBar = ({ sendNotes , isClicked }) => {
             key={note.noteId}
             onClick={handleClick(note)}
           >
-            <div
-              className="note-name-img"
-              style={{ backgroundColor: note.backgroundColor }}
-            >
-              <p className="initial-name-text">
-                {note.noteName
-                  .split(" ")
-                  .map((word) => word.charAt(0))
-                  .join("")
-                  .toUpperCase()
-                  .slice(0, 2)}
-              </p>
+            <div className="inner-div">
+              <div
+                className="note-name-img"
+                style={{ backgroundColor: note.backgroundColor }}
+              >
+                <p className="initial-name-text">
+                  {note.noteName
+                    .split(" ")
+                    .map((word) => word.charAt(0))
+                    .join("")
+                    .toUpperCase()
+                    .slice(0, 2)}
+                </p>
+              </div>
+              <div className="note-name-sidebar">{note.noteName}</div>
             </div>
-            <div className="note-name-sidebar">{note.noteName}</div>
           </div>
         ))}
       </div>

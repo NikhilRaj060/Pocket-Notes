@@ -36,19 +36,22 @@ function NoteContent({ notes, setNotesContainer , isClicked}) {
       const date = `${day} ${monthName} ${year}`;
   
       // Format time
-      let time = dateObj.toLocaleTimeString();
-      let splittedTime = time.split(":");
-      if (splittedTime[0] < 10) {
-        splittedTime[0] = "0" + splittedTime[0];
+      let hours = dateObj.getHours();
+      let minutes = dateObj.getMinutes();
+      if (hours < 10) {
+        hours = `0${hours}`;
       }
-      let finalTime = splittedTime[0] + ":" + splittedTime[1] + " " + splittedTime[2].split(" ")[1];
-  
+      if (minutes < 10) {
+        minutes = `0${minutes}`;
+      }
+      const time = `${hours}:${minutes}${" "}${hours > 12  ? "PM" : "AM"}`;
+
       // Update note content and reset textarea
       setNotesContainer({
         noteId: note.noteId,
         noteText: noteText,
         creationDate: date,
-        creationTime: finalTime,
+        creationTime: time,
       });
   
       // Reset textarea and disable button

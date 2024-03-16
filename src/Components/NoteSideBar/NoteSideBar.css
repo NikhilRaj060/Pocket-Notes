@@ -5,6 +5,7 @@
 }
 
 .header-sidebar {
+    margin: 0;
     text-align: center;
     padding: 35px 30px;
     font-size: 35px;
@@ -31,9 +32,14 @@
 .container {
     border-radius: 15px;
     display: flex;
-    height: 100%;
-    align-items: center;
     padding: 10px 30px;
+}
+
+.inner-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
 }
 
 .btn {
@@ -128,4 +134,16 @@
     .note-sidebar {
       width: 100%;
     }
+
+    .color-box.selected-color::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-20%, -20%);
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        box-shadow: 0 0 10px 2px rgba(var(--selected-color-r), var(--selected-color-g), var(--selected-color-b), 0.7);
+      }
   }

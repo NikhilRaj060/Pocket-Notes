@@ -90,7 +90,7 @@ button {
     gap: 10px;
     padding: 15px;
     flex-direction: column;
-    height: 500px;
+    height: 485px;
 }
 
 .note-content {
@@ -157,21 +157,23 @@ button {
 @media (max-width: 768px) {
     .textarea {
         width: 100%;
-        font-size: 20px;
-        padding: 15px;
+        font-size: 16px;
     }
 
     textarea::placeholder {
         color: #9A9A9A;
-        font-size: 16px;
-        line-height: 22 px;
-        letter-spacing: 1%;
+        font-size: 16px
     }
 
     .send-icon {
         position: absolute;
         cursor: pointer;
-        bottom: 20px;
+        bottom: 30px;
         right: 30px;
+    }
+
+    textarea {
+        padding: 10px !important;
+        font-size: 16px;
     }
 }
