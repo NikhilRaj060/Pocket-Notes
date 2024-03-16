@@ -73,7 +73,7 @@ function NoteContent({ notes, setNotesContainer , isClicked}) {
         <>
           <header className="nav" key={note.noteId}>
             <div className="nav-container">
-              <IoMdArrowBack className="back-icon" onClick={handleBack} color="white" size={44} scale={2}/>
+              {isMobileView ? <IoMdArrowBack className="back-icon" onClick={handleBack} color="white" size={44} scale={2}/> : " "}
               <div
                 className="note-name-img"
                 style={{ backgroundColor: note.backgroundColor }}
